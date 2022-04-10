@@ -111,5 +111,108 @@ num1 < num2 // true
 | 赋值运算符 | 7 | = |
 | 逗号运算符 | 8 | ，|
 
+### JavaScript流程控制
+
+`if`(判断),`switch`(循环),`: ?`(三元表达式),`for`(循环),`while`(循环),`do while`(循环),`break`(跳出循环),`continue`(跳过本次循环)
+
+```javascript
+if (a > b) {
+    console.log('a > b')
+} else if (a < b) {
+    console.log('a < b')
+} else {
+    console.log('a = b')
+}
+
+switch (a) {
+    case 1:
+        console.log('a = 1')
+        break
+    case 2:
+        console.log('a = 2')
+        break
+    default:
+        console.log('a = 3')
+}
+
+a > b ? console.log('a > b') : console.log('a < b')
+
+for (let i = 0; i < 10; i++) {
+    console.log(i)
+}
+
+while (i < 10) {
+    console.log(i)
+    i++
+}
+
+do while (i < 10) {
+    console.log(i)
+    i++
+}
+```
+
+### JavaScript的数组
+
+数组：数组是指一组`数据的集合`，其中每个数据被称为`元素`，在数组中可以存放`任意数据类型`。数组是将`一种数据存储在单个变量名下`的方式，可以使用`索引`来访问数组中的元素。
+
+数组的创建方式: 1、`new Array()` 2、`[]`，注意：`[]`是一个空数组，不能直接赋值给变量，需要使用`new Array()`来创建数组
 
 
+访问数组：`arr[index]`，index为索引，从0开始
+
+数组的遍历：1、`for` 2、`for in` 3、`for of`，`for in`遍历的是数组的索引，`for of`遍历的是数组的元素
+
+数组长度：`arr.length`
+
+计算数组的和平均值：`arr.reduce((a, b) => a + b) / arr.length`,`arr.reduce((a, b) => a + b) / arr.length`
+
+```javascript
+let arr = [1,2,3,4,5,6,7,8,9,10]
+arr.length // 10
+arr.reduce((a, b) => a + b) // 55
+arr.reduce((a, b) => a + b) / arr.length // 5.5
+```
+
+数组的最大值：`Math.max(...arr)`
+
+数组转化为字符串: `arr.join(',')`
+
+数组新增元素：`arr.push(item)`
+
+数组的筛选：`arr.filter(item => item > 3)`
+
+数组去重：`arr.filter((item, index, arr) => arr.indexOf(item) === index)`
+
+翻转数组：`arr.reverse()`
+
+数组排序,冒泡排序 ->  两两比较，大的放在后面，小的放在前面，每次比较完一轮，最大的放在最后，最小的放在第一位
+
+```javascript
+let arr = [5, 3, 4, 1, 2, 6,22,50,10,30,23,40,56]
+
+for (let i = 0; i <= arr.length - 1; i++) { 
+    for (let k = 0; k <= arr.length - i - 1; k++) {
+        if (arr[k] > arr[k + 1]) {
+            let temp = arr[k]
+            arr[k] = arr[k + 1]
+            arr[k + 1] = temp
+        }
+    }
+}
+
+console.log(arr)
+```
+
+### JavaScript的函数
+
+函数：函数是指一段代码的封装，可以在函数内部调用函数，或者在函数外部调用函数。函数的参数可以是多个，也可以是无数个，参数的类型可以是任意的。（重复调用）
+
+```javascript
+function add(a, b) {
+    return a + b
+}
+
+add(1, 2) // 3 
+add(1, 5) // 6
+```
