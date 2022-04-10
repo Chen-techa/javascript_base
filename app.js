@@ -56,19 +56,27 @@
 
 // console.log(arr)
 
-function paixu(arr) {
-    for (let i = 0; i <= arr.length - 1; i++) { 
-        for (let k = 0; k <= arr.length - i - 1; k++) {
-            if (arr[k] > arr[k + 1]) {
-                let temp = arr[k]
-                arr[k] = arr[k + 1]
-                arr[k + 1] = temp
-            }
-        }
-    }
-    return arr
+// function paixu(arr) {
+//     for (let i = 0; i <= arr.length - 1; i++) { 
+//         for (let k = 0; k <= arr.length - i - 1; k++) {
+//             if (arr[k] > arr[k + 1]) {
+//                 let temp = arr[k]
+//                 arr[k] = arr[k + 1]
+//                 arr[k + 1] = temp
+//             }
+//         }
+//     }
+//     return arr
+// }
+
+// let a = [5,7,8,2,1,6,10,22,11,20]
+
+// console.log(paixu(a))
+
+function total (a, b, c) {
+    console.log(arguments[a])
+    console.log(arguments[b])
+    console.log(arguments[c])
 }
 
-let a = [5,7,8,2,1,6,10,22,11,20]
-
-console.log(paixu(a))
+total(0, 1, 2)
